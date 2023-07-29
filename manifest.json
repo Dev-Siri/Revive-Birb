@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Blue Bird",
+  "version": "1.0",
+  "description": "Bring back the old twitter logo and also replace many 𝕏 references with good ol birb.",
+  "action": {},
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "js": ["app/global.js", "app/title.js"],
+      "matches": ["https://twitter.com/*"]
+    }
+  ],
+  "icons": {
+    "16": "./icons/16x16.png",
+    "19": "./icons/19x19.png",
+    "38": "./icons/38x38.png",
+    "48": "./icons/48x48.png",
+    "128": "./icons/128x128.png"
+  }
+}
