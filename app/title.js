@@ -1,7 +1,6 @@
-const observer = new MutationObserver(modifyHead);
-const titleElement = document.querySelector("title");
-
 function modifyHead() {
+  const observer = new MutationObserver(modifyHead);
+  const titleElement = document.querySelector("title");
   if (!document.title.endsWith("X")) return;
 
   // The original site uses twitter.3.ico which is the new X logo
@@ -22,11 +21,8 @@ function modifyHead() {
   const faviconElement = document.querySelector("link[rel~=icon]");
   if (faviconElement) faviconElement.href = TWITTER_FAVICON_URL;
 
+  const config = { childList: true };
   observer.observe(titleElement, config);
 }
 
-const config = {
-  childList: true,
-};
-
-modifyHead();
+runFunction(modifyHead);

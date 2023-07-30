@@ -5,9 +5,22 @@
   "description": "Bring back the old twitter logo and also replace many 𝕏 references with good ol birb.",
   "action": {},
   "permissions": ["tabs", "activeTab", "scripting"],
+  "host_permissions": ["https://twitter.com/*", "<all_urls>"],
+  "web_accessible_resources": [
+    {
+      "matches": ["<all_urls>"],
+      "resources": ["app/loading.js"]
+    }
+  ],
   "content_scripts": [
     {
-      "js": ["app/global.js", "app/title.js"],
+      "js": ["app/init.js", "app/global.js", "app/title.js"],
+      "matches": ["https://twitter.com/*"]
+    },
+    {
+      "js": ["app/inject-loading.js"],
+      "css": ["styles/loading.css"],
+      "run_at": "document_start",
       "matches": ["https://twitter.com/*"]
     }
   ],

@@ -1,0 +1,10 @@
+#placeholder {
+  height: 100vh;
+  justify-content: center;
+}
+
+#twitter-bird-logo {
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+}
