@@ -1,11 +1,18 @@
 {
   "manifest_version": 3,
-  "name": "Blue Bird",
+  "name": "Revive Birb",
   "version": "1.0",
   "description": "Bring back the old twitter logo and also replace many 𝕏 references with good ol birb.",
-  "action": {},
   "permissions": ["tabs", "activeTab", "scripting"],
   "host_permissions": ["https://twitter.com/*", "<all_urls>"],
+  "action": {
+    "default_icon": {
+      "16": "./icons/16.png",
+      "32": "./icons/32.png",
+      "48": "./icons/48.png",
+      "128": "./icons/128.png"
+    }
+  },
   "web_accessible_resources": [
     {
       "matches": ["<all_urls>"],
@@ -18,12 +25,13 @@
   ],
   "content_scripts": [
     {
-      "js": ["app/init.js", "app/global.js", "app/title.js"],
+      "js": [
+        "app/init.js",
+        "app/global.js",
+        "app/title.js",
+        "app/profiles/x.js"
+      ],
       "matches": ["https://twitter.com/*"]
-    },
-    {
-      "js": ["app/profiles/x.js"],
-      "matches": ["https://twitter.com/X"]
     },
     {
       "js": ["app/inject-loading.js"],
@@ -33,10 +41,9 @@
     }
   ],
   "icons": {
-    "16": "./icons/16x16.png",
-    "19": "./icons/19x19.png",
-    "38": "./icons/38x38.png",
-    "48": "./icons/48x48.png",
-    "128": "./icons/128x128.png"
+    "16": "./icons/16.png",
+    "32": "./icons/32.png",
+    "48": "./icons/48.png",
+    "128": "./icons/128.png"
   }
 }
