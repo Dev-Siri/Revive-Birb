@@ -9,13 +9,21 @@
   "web_accessible_resources": [
     {
       "matches": ["<all_urls>"],
-      "resources": ["app/loading.js"]
+      "resources": [
+        "app/loading.js",
+        "images/twitter.avif",
+        "images/banner.avif"
+      ]
     }
   ],
   "content_scripts": [
     {
       "js": ["app/init.js", "app/global.js", "app/title.js"],
       "matches": ["https://twitter.com/*"]
+    },
+    {
+      "js": ["app/profiles/x.js"],
+      "matches": ["https://twitter.com/X"]
     },
     {
       "js": ["app/inject-loading.js"],
