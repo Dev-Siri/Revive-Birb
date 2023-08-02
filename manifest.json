@@ -29,6 +29,7 @@
         "app/init.js",
         "app/global.js",
         "app/title.js",
+        "app/logout.js",
         "app/profiles/x.js"
       ],
       "matches": ["https://twitter.com/*"]
