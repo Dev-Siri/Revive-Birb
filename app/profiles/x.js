@@ -10,7 +10,6 @@ function replaceXRefs() {
   const xMention = document.querySelector(
     "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div:nth-child(3) > div > div > div > div > div.css-1dbjc4n.r-6gpygo.r-14gqq1x > div.css-1dbjc4n.r-1wbh5a2.r-dnmrzs.r-1ny4l3l > div > div.css-1dbjc4n.r-1awozwy.r-18u37iz.r-1wbh5a2 > div > div > div > span"
   );
-  const bio = document.querySelector("div[data-testid=UserDescription] > span");
   const userUrl = document.querySelector(
     "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div:nth-child(3) > div > div > div > div > div:nth-child(4) > div > a > span"
   );
@@ -40,7 +39,6 @@ function replaceXRefs() {
 
     pfpDiv.setAttribute("style", birdBgStyle);
   }
-  if (bio) bio.textContent = "What's happening?";
   if (banner) banner.src = chrome.runtime.getURL("images/banner.avif");
   if (bannerDiv) {
     const birdBgStyle = `background-image: url(${chrome.runtime.getURL(
@@ -60,7 +58,7 @@ function listener() {
   replaceXRefs();
 
   const config = { childList: true };
-  observer.observe(titleElement, config);
+  if (titleElement) observer.observe(titleElement, config);
 }
 
 runFunction(replaceXRefs);

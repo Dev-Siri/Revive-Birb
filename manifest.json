@@ -19,7 +19,8 @@
       "resources": [
         "app/loading.js",
         "images/twitter.avif",
-        "images/banner.avif"
+        "images/banner.avif",
+        "images/auth-hero-banner.avif"
       ]
     }
   ],
@@ -30,7 +31,8 @@
         "app/global.js",
         "app/title.js",
         "app/logout.js",
-        "app/profiles/x.js"
+        "app/profiles/x.js",
+        "app/auth.js"
       ],
       "matches": ["https://twitter.com/*"]
     },
