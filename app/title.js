@@ -6,7 +6,6 @@ function modifyHead() {
   // The original site uses twitter.3.ico which is the new X logo
   // twitter.2 is still present, but it could get removed so this is not really reliable.
   // It maybe possible to link to external sources, but due the CSP, it is unable to.
-  const TWITTER_FAVICON_URL = "https://abs.twimg.com/favicons/twitter.2.ico";
 
   observer.disconnect();
 
@@ -19,7 +18,8 @@ function modifyHead() {
   }
 
   const faviconElement = document.querySelector("link[rel~=icon]");
-  if (faviconElement) faviconElement.href = TWITTER_FAVICON_URL;
+  if (faviconElement)
+    faviconElement.href = chrome.runtime.getURL("images/favicon.ico");
 
   const config = { childList: true };
   observer.observe(titleElement, config);
