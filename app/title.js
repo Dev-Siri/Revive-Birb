@@ -17,6 +17,9 @@ function modifyHead() {
     document.title = document.title.replace("/ X", "/ Twitter");
   }
 
+  const postTitleRegex = /(^| )on [^\s:]+(?=[: ]|$)/g;
+  document.title = document.title.replace(postTitleRegex, " on Twitter");
+
   const faviconElement = document.querySelector("link[rel~=icon]");
   if (faviconElement)
     faviconElement.href = chrome.runtime.getURL("images/favicon.ico");
