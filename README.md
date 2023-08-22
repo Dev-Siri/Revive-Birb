@@ -14,6 +14,10 @@ For the new Twitter official account which is now @X, it now replaces its profil
 
 The extension does very little, but these little changes can make you still make you feel like the logo never changed, primarily because of the X that is shown on every page now transforming into the old bird.
 
+#### Update (August 23, 2023)
+
+Again, another change has been made on the site. The verified (twitter blue) navigation icon has been changed to the X logo. This extension reverts it back to the verified symbol used before.
+
 #### Update (August 15, 2023)
 
 Now the "new tweet" buttons texts have been changed from "Tweet" to "Post". (why elon) The recent update of this extension fixes this too by reverting the change.
