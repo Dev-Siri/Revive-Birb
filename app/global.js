@@ -1,8 +1,8 @@
 function main() {
-  const logo = document.querySelector("a[aria-label=Twitter]>div");
   const verified = document.querySelector("a[aria-label=Verified] > div > div");
+  const logo = document.querySelector("a[aria-label=X]>div");
 
-  if (logo)
+  if (logo) {
     logo.innerHTML = `
       <svg viewBox="0 0 220 220" aria-hidden="true" class="r-1nao33i r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp">
         <g>
@@ -10,6 +10,9 @@ function main() {
         </g>
       </svg>
     `;
+
+    logo.ariaLabel = "Twitter";
+  }
 
   if (verified)
     verified.innerHTML = `
