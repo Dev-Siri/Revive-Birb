@@ -26,6 +26,9 @@ function replaceXRefs() {
   const bannerDiv = document.querySelector(
     "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div:nth-child(3) > div > div > div > a > div > div.r-1p0dtai.r-1pi2tsx.r-1d2f490.r-u8s1d.r-ipm5af.r-13qz1uu > div > div"
   );
+  const headerText = document.querySelector(
+    "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div.css-1dbjc4n.r-aqfbo4.r-gtdqiz.r-1gn8etr.r-1g40b8q > div:nth-child(1) > div > div > div > div > div > div.css-1dbjc4n.r-16y2uox.r-1wbh5a2.r-1pi2tsx.r-1777fci > div > h2 > div > div > div > div > span.css-901oao.css-16my406.r-1awozwy.r-1nao33i.r-6koalj.r-poiln3.r-b88u0q.r-bcqeeo.r-1udh08x.r-3s2u2q.r-qvutc0 > span > span:nth-child(1)"
+  );
 
   if (userUrl)
     userUrl.textContent = userUrl.textContent.replace("x.com", "twitter.com");
@@ -47,6 +50,7 @@ function replaceXRefs() {
 
     bannerDiv.setAttribute("style", birdBgStyle);
   }
+  if (headerText) headerText.textContent = "Twitter";
 }
 
 function listener() {
