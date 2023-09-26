@@ -1,5 +1,5 @@
 function main() {
-  const verified = document.querySelector("a[aria-label=Verified] > div > div");
+  const verified = document.querySelector("a[aria-label=Premium] > div > div");
   const logo = document.querySelector("a[aria-label=X]>div");
 
   if (logo) {
