@@ -1,4 +1,4 @@
-function changeGenericText() {
+export default function tweetButton() {
   const tweetBtnText = document.querySelector(
     "a[data-testid=SideNav_NewTweet_Button] > div > span > div > div > span > span"
   );
@@ -13,5 +13,3 @@ function changeGenericText() {
   if (tweetComposeText) tweetComposeText.textContent = "Tweet";
   if (tweetOnHome) tweetOnHome.textContent = "Tweet";
 }
-
-runFunction(changeGenericText);

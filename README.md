@@ -30,9 +30,17 @@ Now the "new tweet" buttons texts have been changed from "Tweet" to "Post". (why
 $ git clone https://github.com/Dev-Siri/Blue-Bird.git
 ```
 
+- For this step, you need to make sure you have [buntime](https://bun.sh) installed. Then run the build script:
+
+```
+$ bun ./build.ts
+```
+
+This will create a `dist` directory.
+
 - Then open chrome, goto **chrome://extensions** and then turn on Developer Mode (if not already on).
 
-- Click on load unpacked and then select the cloned folder.
+- Click on load unpacked and then select the `dist` directory.
 
 And now you have achieved bird.
 

@@ -1,0 +1,11 @@
+{
+  "name": "revive-birb",
+  "type": "module",
+  "devDependencies": {
+    "@types/chrome": "^0.0.246",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

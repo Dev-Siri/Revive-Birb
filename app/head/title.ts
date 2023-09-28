@@ -1,11 +1,8 @@
-function modifyHead() {
-  const observer = new MutationObserver(modifyHead);
+export default function head() {
+  const observer = new MutationObserver(head);
   const titleElement = document.querySelector("title");
-  if (!document.title.endsWith("X")) return;
 
-  // The original site uses twitter.3.ico which is the new X logo
-  // twitter.2 is still present, but it could get removed so this is not really reliable.
-  // It maybe possible to link to external sources, but due the CSP, it is unable to.
+  if (!document.title.endsWith("X")) return;
 
   observer.disconnect();
 
@@ -20,12 +17,12 @@ function modifyHead() {
   const postTitleRegex = /(^| )on [^\s:]+(?=[: ]|$)/g;
   document.title = document.title.replace(postTitleRegex, " on Twitter");
 
-  const faviconElement = document.querySelector("link[rel~=icon]");
+  const faviconElement =
+    document.querySelector<HTMLLinkElement>("link[rel~=icon]");
+
   if (faviconElement)
     faviconElement.href = chrome.runtime.getURL("images/favicon.ico");
 
   const config = { childList: true };
-  observer.observe(titleElement, config);
+  observer.observe(titleElement!, config);
 }
-
-runFunction(modifyHead);

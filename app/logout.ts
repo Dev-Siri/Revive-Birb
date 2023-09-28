@@ -1,4 +1,4 @@
-function replaceLogoOnLogout() {
+export default function logout() {
   const logo = document.querySelector(
     "div[data-testid=confirmationSheetDialog] > svg"
   );
@@ -12,5 +12,3 @@ function replaceLogoOnLogout() {
       </svg>
     `;
 }
-
-runFunction(replaceLogoOnLogout);
