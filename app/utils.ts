@@ -1,11 +1,22 @@
 export function listener(fn: () => void, element?: HTMLElement) {
   const observer = new MutationObserver(fn);
-  const watchElement = element ?? document.querySelector("title");
+  const watchElement = element ?? document.documentElement;
 
   observer.disconnect();
 
   fn();
 
-  const config = { childList: true };
+  const config = { childList: true, subtree: true };
   if (watchElement) observer.observe(watchElement, config);
+}
+
+const memoizationCache: Record<string, Element | null> = {};
+
+export function querySelectorMemoized<T extends HTMLElement>(selector: string) {
+  if (memoizationCache[selector]) return memoizationCache[selector] as T;
+
+  const element = document.querySelector<T>(selector);
+  memoizationCache[selector] = element;
+
+  return element as T | null;
 }

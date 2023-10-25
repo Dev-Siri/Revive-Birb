@@ -33,11 +33,7 @@ export default function auth() {
     );
   if (smallLogo) {
     if (innerWidth < 1000)
-      smallLogo.outerHTML = `
-        <svg viewBox="0 0 220 220" height="66" width="77" aria-hidden="true" class="r-k200y r-1nao33i r-4qtqp9 r-yyyyoo r-5sfk15 r-dnmrzs r-kzbkwu r-bnwqim r-1plcrui r-lrvibr">
-          <g>${TWITTER_LOGO_MARKUP_PATH}</g>
-        </svg>
-      `;
+      smallLogo.outerHTML = `<svg viewBox="0 0 220 220" height="66" width="77" aria-hidden="true" class="r-k200y r-1nao33i r-4qtqp9 r-yyyyoo r-5sfk15 r-dnmrzs r-kzbkwu r-bnwqim r-1plcrui r-lrvibr">${TWITTER_LOGO_MARKUP_PATH}</svg>`;
     else
       smallLogo.outerHTML = `
         <img src="${chrome.runtime.getURL(

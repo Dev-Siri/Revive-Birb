@@ -14,6 +14,11 @@ For the new Twitter official account which is now @X, it now replaces its profil
 
 The extension does very little, but these little changes can make you still make you feel like the logo never changed, primarily because of the X that is shown on every page now transforming into the old bird.
 
+#### Update (October 25, 2023)
+
+The extension now memoizes certain `querySelector` calls to improve performance but increases memory usage. And now it also works for more headerTexts, post replacements and other page updates with sacrificing UX (perf).
+The extension also fixes the previously existing issue where some stuff would revert back on client-side navigation. Now the `MutationObserver` listens to the `document.documentElement` which surprisingly works with little overhead and listens to updates on SPAs correctly.
+
 #### Update (August 23, 2023)
 
 Again, another change has been made on the site. The verified (twitter blue) navigation icon has been changed to the X logo. This extension reverts it back to the verified symbol used before.

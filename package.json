@@ -3,7 +3,8 @@
   "type": "module",
   "devDependencies": {
     "@types/chrome": "^0.0.246",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "svgo": "^3.0.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

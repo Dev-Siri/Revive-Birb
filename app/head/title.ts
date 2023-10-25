@@ -1,6 +1,8 @@
+import { querySelectorMemoized } from "../utils";
+
 export default function head() {
   const observer = new MutationObserver(head);
-  const titleElement = document.querySelector("title");
+  const titleElement = querySelectorMemoized("title");
 
   if (!document.title.endsWith("X")) return;
 
@@ -18,7 +20,7 @@ export default function head() {
   document.title = document.title.replace(postTitleRegex, " on Twitter");
 
   const faviconElement =
-    document.querySelector<HTMLLinkElement>("link[rel~=icon]");
+    querySelectorMemoized<HTMLLinkElement>("link[rel~=icon]");
 
   if (faviconElement)
     faviconElement.href = chrome.runtime.getURL("images/favicon.ico");
