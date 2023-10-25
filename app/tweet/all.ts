@@ -11,7 +11,11 @@ export default function tweetPage() {
     "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div.css-1dbjc4n.r-kemksi.r-1kqtdi0.r-1ljd8xs.r-13l2t4g.r-1phboty.r-16y2uox.r-1jgb5lz.r-11wrixw.r-61z16t.r-1ye8kvj.r-13qz1uu.r-184en5c > div > section > div > div > div:nth-child(1) > div > div > article > div > div > div:nth-child(3) > div.css-1dbjc4n.r-1awozwy.r-2sztyj.r-1efd50x.r-5kkj8d.r-18u37iz.r-1wtj0ep > a > div > span"
   );
 
-  if (tweetPlaceholder) tweetPlaceholder.textContent = "Tweet your reply";
+  if (
+    tweetPlaceholder &&
+    !tweetPlaceholder.hasAttribute("data-focusvisible-polyfill")
+  )
+    tweetPlaceholder.textContent = "Tweet your reply";
   if (headerText) headerText.textContent = "Tweet";
   if (tweetEngagementText)
     tweetEngagementText.textContent = "View tweet engagements";
