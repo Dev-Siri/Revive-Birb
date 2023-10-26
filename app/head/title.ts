@@ -16,6 +16,19 @@ export default function head() {
     document.title = document.title.replace("/ X", "/ Twitter");
   }
 
+  // The check is a bit more specific to narrow down inaccuracies
+  if (document.title.includes("Posts with replies by"))
+    document.title = document.title.replace(
+      "Posts with replies",
+      "Tweets with replies"
+    );
+
+  if (document.title.includes("Media posts by"))
+    document.title = document.title.replace("Media posts", "Media tweets");
+
+  if (document.title.includes("Posts liked by"))
+    document.title = document.title.replace("Posts liked", "Tweets liked");
+
   const postTitleRegex = /(^| )on [^\s:]+(?=[: ]|$)/g;
   document.title = document.title.replace(postTitleRegex, " on Twitter");
 
