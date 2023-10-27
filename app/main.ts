@@ -1,3 +1,4 @@
+import analyticsModal from "./analytics-modal.js";
 import auth from "./auth.js";
 import head from "./head/title.js";
 import home, { moreTweetsLoaded } from "./home.js";
@@ -8,6 +9,7 @@ import changeSearchBar from "./search-bar.js";
 import theme from "./theme.js";
 import trends from "./trends.js";
 import tweetButton from "./tweet-button.js";
+import tweet from "./tweet.js";
 import tweetPage from "./tweet/all.js";
 import { listener } from "./utils.js";
 
@@ -19,7 +21,9 @@ function main() {
   tweetPage();
   changeSearchBar();
   listener(moreTweetsLoaded);
+  listener(analyticsModal);
   listener(tweetButton);
+  listener(tweet);
   listener(allProfiles);
   listener(trends);
   listener(tweetPage);
