@@ -9,7 +9,9 @@ export default function head() {
   observer.disconnect();
 
   if (document.title === "X") {
-    document.title = "Messages / Twitter";
+    if (location.pathname === "/messages")
+      document.title = "Messages / Twitter";
+    else document.title = "Twitter";
   } else if (document.title[0] === "X") {
     document.title = "Twitter (@twitter) / Twitter";
   } else {
@@ -31,12 +33,6 @@ export default function head() {
 
   const postTitleRegex = /(^| )on [^\s:]+(?=[: ]|$)/g;
   document.title = document.title.replace(postTitleRegex, " on Twitter");
-
-  const faviconElement =
-    querySelectorMemoized<HTMLLinkElement>("link[rel~=icon]");
-
-  if (faviconElement)
-    faviconElement.href = chrome.runtime.getURL("images/favicon.ico");
 
   const config = { childList: true };
   observer.observe(titleElement!, config);

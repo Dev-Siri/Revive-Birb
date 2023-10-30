@@ -23,7 +23,7 @@ export default function home() {
   const verified = document.querySelector("a[aria-label=Premium] > div > div");
   const logo = document.querySelector("a[aria-label=X]>div");
   const licenseText = document.querySelector(
-    "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div.css-1dbjc4n.r-aqfbo4.r-zso239.r-1jocfgc > div > div.css-1dbjc4n.r-gtdqiz.r-1jocfgc > div > div > div > div.css-1dbjc4n.r-1niwhzg.r-1kqtdi0.r-1867qdf.r-1phboty.r-1yadl64.r-1ifxtd0.r-1udh08x > nav > div.css-901oao.r-37j5jr.r-n6v787.r-16dba41.r-1cwl3u0.r-hrzydr.r-bcqeeo.r-j2kj52.r-qvutc0 > span"
+    "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div.css-1dbjc4n.r-aqfbo4.r-zso239.r-1hycxz > div > div.css-1dbjc4n.r-gtdqiz.r-1hycxz > div > div > div > div.css-1dbjc4n.r-1niwhzg.r-1kqtdi0.r-1867qdf.r-1phboty.r-1yadl64.r-1ifxtd0.r-1udh08x > nav > div.css-901oao.r-37j5jr.r-n6v787.r-16dba41.r-1cwl3u0.r-hrzydr.r-bcqeeo.r-j2kj52.r-qvutc0 > span"
   );
 
   if (logo) {

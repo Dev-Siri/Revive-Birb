@@ -10,7 +10,11 @@ export default function analyticsModal() {
     "div[data-testid=promotionInfoWrapper] > div:nth-child(2) > a > div > span > span"
   );
 
-  if (modalHeaderText) modalHeaderText.textContent = "Tweet Analytics";
+  if (modalHeaderText?.textContent)
+    modalHeaderText.textContent = modalHeaderText.textContent?.replace(
+      "Post",
+      "Tweet"
+    );
   if (promotionInfoHeading)
     promotionInfoHeading.textContent = "Promote your tweet";
   if (promotionInfoButtonText)

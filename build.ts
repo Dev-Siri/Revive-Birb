@@ -30,10 +30,13 @@ const buildConfig: Omit<BuildConfig, "entrypoints"> = {
   target: "browser",
 };
 
+const entryPointOutput = entryPoint.replace(".ts", ".js");
+
 const builds: Promise<BuildOutput>[] = [];
 
 const mainBuild = Bun.build({
   ...buildConfig,
+  target: "browser",
   entrypoints: [`./app/${entryPoint}`],
   outdir: `./${outDir}`,
 });
@@ -89,5 +92,10 @@ for (const imageFile of await readdir("./images")) {
     await Bun.file(`./images/${imageFile}`).arrayBuffer()
   );
 }
+
+const entryPointPath = `./${outDir}/${entryPointOutput}`;
+const entry = await Bun.file(entryPointPath).text();
+
+await Bun.write(entryPointPath, `"use strict";${entry}`);
 
 console.log("Built!");
