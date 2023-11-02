@@ -1,6 +1,7 @@
 import { TWITTER_LOGO_MARKUP_PATH } from "./constants/logo.js";
 
 import { minifySVG } from "./macros/minify-svg.js" assert { type: "macro" };
+import { isDarkMode } from "./utils.js";
 
 // still a part of /home so placed it here
 export function moreTweetsLoaded() {
@@ -27,7 +28,11 @@ export default function home() {
   );
 
   if (logo) {
-    logo.innerHTML = `<svg viewBox="0 0 220 220" aria-hidden="true" class="r-1nao33i r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp">${TWITTER_LOGO_MARKUP_PATH}</svg>`;
+    logo.innerHTML = `<svg viewBox="0 0 220 220" aria-hidden="true" class="r-1nao33i r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp">${
+      isDarkMode()
+        ? TWITTER_LOGO_MARKUP_PATH.replace("#1d9bf0", "lightgray")
+        : TWITTER_LOGO_MARKUP_PATH
+    }</svg>`;
 
     logo.ariaLabel = "Twitter";
   }

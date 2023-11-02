@@ -20,3 +20,11 @@ export function querySelectorMemoized<T extends HTMLElement>(selector: string) {
 
   return element as T | null;
 }
+
+export function isDarkMode() {
+  const htmlTagHasDarkScheme = document.documentElement
+    .getAttribute("style")
+    ?.includes("color-scheme: dark");
+
+  return htmlTagHasDarkScheme;
+}
