@@ -6,10 +6,10 @@ import { isDarkMode, querySelectorMemoized } from "./utils.js";
 // still a part of /home so placed it here
 export function moreTweetsLoaded() {
   const loadedMoreTweetsText = document.querySelector(
-    "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div.css-1dbjc4n.r-kemksi.r-1kqtdi0.r-1ljd8xs.r-13l2t4g.r-1phboty.r-16y2uox.r-1jgb5lz.r-11wrixw.r-61z16t.r-1ye8kvj.r-13qz1uu.r-184en5c > div > div.css-1dbjc4n.r-1jgb5lz.r-1ye8kvj.r-13qz1uu > div > section > div > div > div:nth-child(1) > div > div > div > div > span"
+    "#react-root > div > div > div.css-175oi2r.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div > div > div.css-175oi2r.r-1jgb5lz.r-13qz1uu.r-1ye8kvj > div > section > div > div > div:nth-child(1) > div > div > div > div > span"
   );
   const tweetPile = document.querySelector(
-    "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div.css-1dbjc4n.r-kemksi.r-1kqtdi0.r-1ljd8xs.r-13l2t4g.r-1phboty.r-16y2uox.r-1jgb5lz.r-11wrixw.r-61z16t.r-1ye8kvj.r-13qz1uu.r-184en5c > div > div.css-1dbjc4n.r-aqfbo4.r-gtdqiz.r-1gn8etr.r-1g40b8q > div.css-1dbjc4n.r-633pao.r-u8s1d.r-dkhcqf.r-axxi2z.r-18jm5s1.r-13qz1uu.r-1wyyakw > div > div > div > div > div.css-901oao.css-1hf3ou5.r-1kihuf0.r-jwli3a.r-37j5jr.r-a023e6.r-16dba41.r-rjixqe.r-13hce6t.r-bcqeeo.r-qvutc0 > span > span > span"
+    "#react-root > div > div > div.css-175oi2r.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div > div > div.css-175oi2r.r-aqfbo4.r-gtdqiz.r-1gn8etr.r-1g40b8q > div.css-175oi2r.r-633pao.r-u8s1d.r-dkhcqf.r-axxi2z.r-18jm5s1.r-13qz1uu > div > div > div > div > div.css-1rynq56.r-dnmrzs.r-1udh08x.r-3s2u2q.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1kihuf0.r-13hce6t > span > span > span"
   );
 
   if (tweetPile) tweetPile.textContent = "tweeted";
@@ -33,8 +33,6 @@ export function license() {
 }
 
 export default function home() {
-  document.body.style.overflowX = "hidden";
-
   const verified = querySelectorMemoized("a[aria-label=Premium] > div > div");
   const logo = querySelectorMemoized("a[aria-label=X]>div");
 

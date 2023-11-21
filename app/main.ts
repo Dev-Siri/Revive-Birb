@@ -9,6 +9,7 @@ import allProfiles from "./profiles/all.js";
 import xProfile from "./profiles/x.js";
 import changeSearchBar from "./search-bar.js";
 import theme from "./theme.js";
+import tooltip from "./tooltip.js";
 import trends from "./trends.js";
 import tweetButton from "./tweet-button.js";
 import tweet from "./tweet.js";
@@ -25,17 +26,20 @@ function main() {
   tweetPage();
   changeSearchBar();
   jobs();
-  listener(moreTweetsLoaded);
-  listener(license);
-  listener(analyticsModal);
-  listener(dropDown);
-  listener(tweetButton);
-  listener(tweet);
-  listener(allProfiles);
-  listener(trends);
-  listener(tweetPage);
-  listener(xProfile);
-  listener(theme);
+  listener(() => {
+    license();
+    analyticsModal();
+    dropDown();
+    tweetButton();
+    tweet();
+    allProfiles();
+    trends();
+    tweetPage();
+    xProfile();
+    tooltip();
+    theme();
+    moreTweetsLoaded();
+  });
 }
 
 // HACK: Runs when the page loads enough (SPA workaround)
