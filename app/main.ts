@@ -1,7 +1,9 @@
 import analyticsModal from "./analytics-modal.js";
 import auth from "./auth.js";
+import dropDown from "./drop-down.js";
 import head from "./head/title.js";
-import home, { moreTweetsLoaded } from "./home.js";
+import home, { license, moreTweetsLoaded } from "./home.js";
+import jobs from "./jobs.js";
 import logout from "./logout.js";
 import allProfiles from "./profiles/all.js";
 import xProfile from "./profiles/x.js";
@@ -13,6 +15,8 @@ import tweet from "./tweet.js";
 import tweetPage from "./tweet/all.js";
 import { listener } from "./utils.js";
 
+// stuff normally called like `home()` and `auth()` only run once.
+// the other ones wrapped in `listener()` run on every page update.
 function main() {
   head();
   home();
@@ -20,8 +24,11 @@ function main() {
   logout();
   tweetPage();
   changeSearchBar();
+  jobs();
   listener(moreTweetsLoaded);
+  listener(license);
   listener(analyticsModal);
+  listener(dropDown);
   listener(tweetButton);
   listener(tweet);
   listener(allProfiles);

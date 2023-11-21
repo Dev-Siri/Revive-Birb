@@ -1,7 +1,7 @@
 import { TWITTER_LOGO_MARKUP_PATH } from "./constants/logo.js";
 
 import { minifySVG } from "./macros/minify-svg.js" assert { type: "macro" };
-import { isDarkMode } from "./utils.js";
+import { isDarkMode, querySelectorMemoized } from "./utils.js";
 
 // still a part of /home so placed it here
 export function moreTweetsLoaded() {
@@ -20,12 +20,23 @@ export function moreTweetsLoaded() {
     );
 }
 
-export default function home() {
-  const verified = document.querySelector("a[aria-label=Premium] > div > div");
-  const logo = document.querySelector("a[aria-label=X]>div");
+export function license() {
   const licenseText = document.querySelector(
-    "#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div.css-1dbjc4n.r-aqfbo4.r-zso239.r-1hycxz > div > div.css-1dbjc4n.r-gtdqiz.r-1hycxz > div > div > div > div.css-1dbjc4n.r-1niwhzg.r-1kqtdi0.r-1867qdf.r-1phboty.r-1yadl64.r-1ifxtd0.r-1udh08x > nav > div.css-901oao.r-37j5jr.r-n6v787.r-16dba41.r-1cwl3u0.r-hrzydr.r-bcqeeo.r-j2kj52.r-qvutc0 > span"
+    "#react-root > div > div > div.css-175oi2r.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div.css-175oi2r.r-aqfbo4.r-zso239.r-1hycxz > div > div.css-175oi2r.r-1hycxz.r-gtdqiz > div > div > div > div.css-175oi2r.r-1kqtdi0.r-1867qdf.r-1phboty.r-1ifxtd0.r-1udh08x.r-1niwhzg.r-1yadl64 > nav > div.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-n6v787.r-1cwl3u0.r-16dba41.r-hrzydr.r-j2kj52 > span"
   );
+
+  if (licenseText?.textContent)
+    licenseText.textContent = licenseText.textContent.replace(
+      "X Corp",
+      "Twitter Inc"
+    );
+}
+
+export default function home() {
+  document.body.style.overflowX = "hidden";
+
+  const verified = querySelectorMemoized("a[aria-label=Premium] > div > div");
+  const logo = querySelectorMemoized("a[aria-label=X]>div");
 
   if (logo) {
     logo.innerHTML = `<svg viewBox="0 0 220 220" aria-hidden="true" class="r-1nao33i r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp">${
@@ -45,10 +56,4 @@ export default function home() {
         </g>
       </svg>
     `);
-
-  if (licenseText?.textContent)
-    licenseText.textContent = licenseText.textContent.replace(
-      "X Corp",
-      "Twitter Inc"
-    );
 }

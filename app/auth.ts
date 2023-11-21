@@ -1,9 +1,6 @@
 import { TWITTER_LOGO_MARKUP_PATH } from "./constants/logo";
 
 export default function auth() {
-  const heroText = document.querySelector(
-    "#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div.css-1dbjc4n.r-tv6buo > div > div > div.css-901oao.r-1nao33i.r-fm7h5w.r-19oahor.r-b88u0q.r-nm9kes.r-1ncnki0.r-4afqvc.r-bcqeeo.r-qvutc0 > span"
-  );
   const smallerText = document.querySelector(
     "#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div.css-1dbjc4n.r-tv6buo > div > div > div.css-901oao.r-1nao33i.r-fm7h5w.r-1yjpyg1.r-b88u0q.r-ueyrd6.r-zd98yo.r-bcqeeo.r-qvutc0 > span"
   );
@@ -17,9 +14,6 @@ export default function auth() {
     "#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div.css-1dbjc4n.r-p1pxzi.r-wfqgy4.r-zd22at > nav > a:nth-child(14) > span"
   );
 
-  const newHeroText = "See what’s happening in the world right now";
-
-  if (heroText) heroText.textContent = newHeroText;
   if (smallerText) smallerText.textContent = "Join Twitter today.";
   if (xCorp)
     xCorp.textContent = (xCorp.textContent || "Twitter Inc").replace(
