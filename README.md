@@ -14,9 +14,13 @@ For the new Twitter official account which is now @X, it now replaces its profil
 
 The extension does very little, but these little changes can make you still make you feel like the logo never changed, primarily because of the X that is shown on every page now transforming into the old bird.
 
+#### Update (November 21, 2023)
+
+The update to [twitter.com](https://twitter.com) broke the extension on the loading screen / tweet header texts. This update patches those issues + addresses another long existing issue where reply tweet text will get reset to "Tweet your reply". now the extension adds one more conditional check to ensure nothing breaks. This issue persisted because Twitter uses content editable divs and makes them act as inputs, so its not as straight forward as setting the `placeholder` property.
+
 #### Update (October 25, 2023)
 
-The extension now memoizes certain `querySelector` calls to improve performance but increases memory usage. And now it also works for more headerTexts, post replacements and other page updates with sacrificing UX (perf).
+The extension now memoizes certain `querySelector` calls to improve performance but increases memory usage. And now it also works for more headerTexts, post replacements and other page updates without sacrificing UX (perf).
 The extension also fixes the previously existing issue where some stuff would revert back on client-side navigation. Now the `MutationObserver` listens to the `document.documentElement` which surprisingly works with little overhead and listens to updates on SPAs correctly.
 
 #### Update (August 23, 2023)

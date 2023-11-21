@@ -13,4 +13,4 @@ if (faviconElement && faviconUrl) {
 }
 
 if (placeholder)
-  placeholder.innerHTML = `<svg viewBox="0 0 220 220" height="66" width="77" id="twitter-bird-logo" aria-hidden="true" class="r-1nao33i r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp">${TWITTER_LOGO_MARKUP_PATH}</svg>`;
+  placeholder.innerHTML = `<svg viewBox="0 0 220 220" height="80" width="100" id="twitter-bird-logo" style="height: 70px; width: 85px;" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-1plcrui r-lrvibr r-1p0dtai r-18jsvk2 r-zchlnj r-wy61xf r-ywje51 r-u8s1d r-1d2f490 r-ipm5af r-1blnp2b">${TWITTER_LOGO_MARKUP_PATH}</svg>`;
