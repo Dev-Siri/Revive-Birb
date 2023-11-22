@@ -14,6 +14,7 @@ import trends from "./trends.js";
 import tweetButton from "./tweet-button.js";
 import tweet from "./tweet.js";
 import tweetPage from "./tweet/all.js";
+import maskUrls from "./url-masking.js";
 import { listener } from "./utils.js";
 
 // stuff normally called like `home()` and `auth()` only run once.
@@ -36,6 +37,7 @@ function main() {
     trends();
     tweetPage();
     xProfile();
+    maskUrls();
     tooltip();
     theme();
     moreTweetsLoaded();

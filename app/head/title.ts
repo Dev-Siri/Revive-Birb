@@ -12,11 +12,12 @@ export default function head() {
     if (location.pathname === "/messages")
       document.title = "Messages / Twitter";
     else document.title = "Twitter";
-  } else if (document.title[0] === "X") {
-    document.title = "Twitter (@twitter) / Twitter";
   } else {
     document.title = document.title.replace("/ X", "/ Twitter");
   }
+
+  if (document.title === "X (@X) / Twitter")
+    document.title = "Twitter (@twitter) / Twitter";
 
   // The check is a bit more specific to narrow down inaccuracies
   if (document.title.includes("Posts with replies by"))

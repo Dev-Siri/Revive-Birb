@@ -9,7 +9,12 @@ export default function tweetButton() {
     "div[data-testid=tweetButtonInline] > div > span > span"
   );
 
+  if (tweetComposeText?.textContent) {
+    if (tweetComposeText.textContent === "Post all")
+      tweetComposeText.textContent = "Tweet all";
+    else tweetComposeText.textContent = "Tweet";
+  }
+
   if (tweetBtnText) tweetBtnText.textContent = "Tweet";
-  if (tweetComposeText) tweetComposeText.textContent = "Tweet";
   if (tweetOnHome) tweetOnHome.textContent = "Tweet";
 }
