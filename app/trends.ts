@@ -3,7 +3,8 @@ export default function trends() {
     "div[data-testid=trend] > div > div:nth-child(3) > span"
   );
 
-  for (const trend of trends) {
+  for (let i = 0; i < trends.length; i++) {
+    const trend = trends[i];
     if (trend?.textContent)
       trend.textContent = trend.textContent.replace("posts", "tweets");
   }

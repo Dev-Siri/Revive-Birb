@@ -10,15 +10,27 @@ export function listener(fn: () => void, element?: HTMLElement) {
   if (watchElement) observer.observe(watchElement, config);
 }
 
-const memoizationCache: Record<string, Element | null> = {};
+const memoizationCache = new WeakMap<
+  HTMLElement,
+  Map<string, Element | null>
+>();
 
 export function querySelectorMemoized<T extends HTMLElement>(selector: string) {
-  if (memoizationCache[selector]) return memoizationCache[selector] as T;
+  const rootElement = document.documentElement;
+
+  if (!memoizationCache.has(rootElement))
+    memoizationCache.set(rootElement, new Map<string, Element | null>());
+
+  const cache = memoizationCache.get(rootElement)!;
+
+  if (cache.has(selector)) {
+    return cache.get(selector) as T | null;
+  }
 
   const element = document.querySelector<T>(selector);
-  memoizationCache[selector] = element;
+  cache.set(selector, element);
 
-  return element as T | null;
+  return element;
 }
 
 export function isDarkMode() {

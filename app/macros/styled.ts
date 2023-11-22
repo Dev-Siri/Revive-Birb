@@ -5,7 +5,7 @@ const kebabCasify = (str: string) =>
 export function styled(stylesheet: Record<string, string | number>) {
   let css = "";
 
-  for (const key of Object.keys(stylesheet)) {
+  for (const key in stylesheet) {
     const value = stylesheet[key];
 
     css += `${kebabCasify(key)}:${value};`;
