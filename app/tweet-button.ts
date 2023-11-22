@@ -1,7 +1,5 @@
-import { querySelectorMemoized } from "./utils";
-
 export default function tweetButton() {
-  const tweetComposeText = querySelectorMemoized(
+  const tweetComposeText = document.querySelector(
     "div[data-testid=tweetButton] > div > span > span"
   );
   const tweetBtnText = document.querySelector(
