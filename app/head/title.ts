@@ -8,6 +8,15 @@ export default function head() {
 
   observer.disconnect();
 
+  const faviconElement =
+    document.querySelector<HTMLLinkElement>("link[rel~=icon]");
+  const faviconUrl = document.getElementById("favicon-url");
+
+  if (faviconElement && faviconUrl) {
+    faviconElement.href = faviconUrl.innerHTML;
+    document.documentElement.removeChild(faviconUrl);
+  }
+
   if (document.title === "X") {
     if (location.pathname === "/messages")
       document.title = "Messages / Twitter";
