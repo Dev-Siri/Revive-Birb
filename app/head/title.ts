@@ -36,7 +36,7 @@ export default function head() {
     );
 
   if (document.title.includes("Media posts by"))
-    document.title = document.title.replace("Media posts", "Media tweets");
+    document.title = document.title.replace("Media posts", "Media Tweets");
 
   if (document.title.includes("Posts liked by"))
     document.title = document.title.replace("Posts liked", "Tweets liked");

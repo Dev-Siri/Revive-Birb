@@ -11,7 +11,7 @@ export default function trends() {
       trend.innerHTML = trend.innerHTML.replace("Only on X", "Only on Twitter");
 
     if (trend?.textContent)
-      trend.textContent = trend.textContent.replace("posts", "tweets");
+      trend.textContent = trend.textContent.replace("posts", "Tweets");
   }
 
   for (let i = 0; i < trends.length; i++) {

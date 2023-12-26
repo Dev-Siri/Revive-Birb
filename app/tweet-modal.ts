@@ -4,5 +4,8 @@ export default function tweetModal() {
   );
 
   if (saveTweet?.textContent === "Save post?")
-    saveTweet.textContent = "Save tweet?";
+    saveTweet.textContent = "Save Tweet?";
+
+  if (saveTweet?.textContent === "Delete post?")
+    saveTweet.textContent = "Delete Tweet?";
 }

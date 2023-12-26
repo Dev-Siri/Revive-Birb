@@ -12,8 +12,8 @@ export default function allProfiles() {
   if (tweetsTabText) tweetsTabText.textContent = "Tweets";
   if (tweetCountText?.textContent)
     tweetCountText.textContent = tweetCountText.textContent.replace(
-      "posts",
-      "tweets"
+      "post",
+      "Tweet"
     );
 
   let index = 0;

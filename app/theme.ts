@@ -32,7 +32,7 @@ export default function theme() {
 
   if (tweet)
     tweet.textContent =
-      "At the heart of Twitter are short messages called tweets — just like this one — which can include photos, videos, links, text, hashtags, and mentions like ";
+      "At the heart of Twitter are short messages called Tweets — just like this one — which can include photos, videos, links, text, hashtags, and mentions like ";
   if (tweetMention) tweetMention.textContent = "@twitter";
   if (infoText)
     infoText.textContent =
