@@ -1,5 +1,12 @@
 import { querySelectorMemoized } from "../utils";
 
+/*
+  dont use direct document.title = 'new title' assign
+  when there's a notification, twitter adds a (#) at the start to indicate the number
+  of notifications. so directly assigning a new value might cause a crash because
+  react on twitter will continuously try to add that pre-text and the extension will also react to that
+  and replace it again causing an infinite loop. aka always use document.title = document.title.replace(...)
+*/
 export default function head() {
   const observer = new MutationObserver(head);
   const titleElement = querySelectorMemoized("title");
@@ -18,15 +25,16 @@ export default function head() {
   }
 
   if (document.title === "X") {
-    if (location.pathname === "/messages")
-      document.title = "Messages / Twitter";
-    else document.title = "Twitter";
+    document.title = document.title.replace("X", "Twitter");
   } else {
     document.title = document.title.replace("/ X", "/ Twitter");
   }
 
   if (document.title === "X (@X) / Twitter")
-    document.title = "Twitter (@twitter) / Twitter";
+    document.title = document.title.replace(
+      "X (@X) / Twitter",
+      "Twitter (@twitter) / Twitter"
+    );
 
   // The check is a bit more specific to narrow down inaccuracies
   if (document.title.includes("Posts with replies by"))
@@ -59,8 +67,8 @@ export default function head() {
       "Users who retweeted this tweet"
     );
 
-  const postTitleRegex = /(^| )on [^\s:]+(?=[: ]|$)/g;
-  document.title = document.title.replace(postTitleRegex, " on Twitter");
+  const tweetTitleRegex = /(^| )on [^\s:]+(?=[: ]|$)/g;
+  document.title = document.title.replace(tweetTitleRegex, " on Twitter");
 
   const config = { childList: true };
   observer.observe(titleElement!, config);

@@ -1,5 +1,6 @@
 import analyticsModal from "./analytics-modal.js";
 import auth from "./auth.js";
+import bookmarks from "./bookmarks.js";
 import dropDown from "./drop-down.js";
 import head from "./head/title.js";
 import home, { license, moreTweetsLoaded } from "./home.js";
@@ -15,6 +16,7 @@ import tweetButton from "./tweet-button.js";
 import tweetModal from "./tweet-modal.js";
 import tweet from "./tweet.js";
 import tweetPage from "./tweet/all.js";
+import twitterBlue from "./twitter-blue.js";
 import maskUrls from "./url-masking.js";
 import { listener } from "./utils.js";
 
@@ -27,6 +29,8 @@ function main() {
   logout();
   tweetPage();
   jobs();
+  listener(twitterBlue);
+  listener(bookmarks);
   listener(changeSearchBar);
   listener(license);
   listener(analyticsModal);
