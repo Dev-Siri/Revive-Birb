@@ -4,32 +4,37 @@ An extremely simple chrome extension I made for personal use to replace the new 
 
 ## What does this do?
 
-First of all, it replaces the 𝕏 logo svg with the previously used blue bird in the main application. And lastly, it also modifies the `document.title`. This modification goes many ways.
+1. It replaces the 𝕏 logo svg with the previously used blue bird in the main application. (visible on the sidebar)
 
-- If its just a normal navigation (eg. Home / X or Notification), then it checks if the last character is "X", then it replaces it with "Twitter"
-- For the messages tab in Twitter, it for some reason sets the title as just X. So to fix this, a extra patch is written which checks if the `document.title` is just X, and then transforms it to "Messages / Twitter".
+2. Modifies the tab title (`document.title`)
 
-It also preloads and injects a `loading.js` (with its styles) which replaces the logo on the loading screen.
-For the new Twitter official account which is now @X, it now replaces its profile picture title, name and other stuff with the previous "Twitter" info. This may not be accurate with the account but still its just an addon I thought would be nice.
+- If its just a normal navigation (eg. Home / X or Notification), then it checks if the last character is "X", then it replaces it with "Twitter". So Home / X would become Home / Twitter.
 
-The extension does very little, but these little changes can make you still make you feel like the logo never changed, primarily because of the X that is shown on every page now transforming into the old bird.
+- While viewing a Tweet (basically being on the `/status/[statusId]` url), It says "\[username\] on X: rest of the tweet". This Extension uses a regex (that I didn't write) to revert it back to "\[username\] on Twitter: rest of the tweet"
 
-#### Update (November 21, 2023)
+- When the title contains the word "post" that was set by the Twitter website itself, then it replaces it with the word "Tweet".
 
-The update to [twitter.com](https://twitter.com) broke the extension on the loading screen / tweet header texts. This update patches those issues + addresses another long existing issue where reply tweet text will get reset to "Tweet your reply". now the extension adds one more conditional check to ensure nothing breaks. This issue persisted because Twitter uses content editable divs and makes them act as inputs, so its not as straight forward as setting the `placeholder` property.
+3. It also preloads and injects a `loading.js` (with its styles) which replaces the logo on the loading screen.
 
-#### Update (October 25, 2023)
+4. For the new Twitter official account which is now @X, it now replaces its profile picture title, name and other stuff with the previous "Twitter" info. This may not be accurate with the account but still its just an addon I thought would be nice.
 
-The extension now memoizes certain `querySelector` calls to improve performance but increases memory usage. And now it also works for more headerTexts, post replacements and other page updates without sacrificing UX (perf).
-The extension also fixes the previously existing issue where some stuff would revert back on client-side navigation. Now the `MutationObserver` listens to the `document.documentElement` which surprisingly works with little overhead and listens to updates on SPAs correctly.
+5. Most common one to spot, the "Tweet" button on the sidebar is now also back to "Tweet" instead of "Post"
 
-#### Update (August 23, 2023)
+6. This is very hard to notice, but a detail nevertheless. When you hover over the compose Tweet button (or what it shows as just a leaf) while on a medium sized screen, then it says the word "Post" in the tooltip. This extension DOES replace that as well. Same happens when you hover over the Retweet button, it says "Repost", but this extension reverts that back to "Retweet" as well.
 
-Again, another change has been made on the site. The verified (twitter blue) navigation icon has been changed to the X logo. This extension reverts it back to the verified symbol used before.
+7. Clicking on the Retweet button reveals a dropdown with two options, "Quote" and "Repost". Both of which are not what Twitter really calls them. So this reverts even that back to "Quote Tweet" and "Retweet"
 
-#### Update (August 15, 2023)
+8. This extension even replaces the retweet text above a tweet. So if someone retweets a tweet, it shows a little gray text on the top that says "\[username\] reposted" (that is now after the rebrand). This extensions actually does replace this text to again say "\[username\] retweeted". Don't worry, I tested this on [teo](https://twitter.com/teo_b0)'s account. The account has 211k Tweets, and most of them are retweets (the bio literally says "i retweet a lot"). I went and checked the performance of the extension on the account, and with the recursive approach this extension takes, it surprisingly didn't slow down at all or slow down to be even noticed. I'd doubt you'll have any performance problems. But all of the "reposted" texts will be replaced with "retweeted".
 
-Now the "new tweet" buttons texts have been changed from "Tweet" to "Post". (why elon) The recent update of this extension fixes this too by reverting the change.
+9. In the right view with the Trends and stuff, you'll notice the legal text saying "X Corp". But this extension changes that to the now non-existent Twitter Inc. Still, why not. I'm trying to restore as much of the experience as possible.
+
+10. When opening a profile, look at the top to the Tweet count, with this extension, it replaces the "N posts" to "N Tweets". Also, look to the right at the trends (The "what's happening" section below the search bar), you'll notice the number of tweets for each trend says "N Tweets" instead of "N posts". Then if you look at a certain trend that might say "Only on X", you'll see its replaced with "Only on Twitter". Can't miss those small details.
+
+There are still way more X replacements with this extension, you can see for yourself. Remember, I'm still working on this extension, and Elon is updating the website too. So if you see any X replacement that has not yet been replaced, then you can send a PR fixing it / an issue pointing it out and I'll try to implement its replacement.
+
+### When was this last updated meaningfully?
+
+#### 31st December, 2023
 
 ## How to use this?
 
