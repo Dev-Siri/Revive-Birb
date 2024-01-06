@@ -1,19 +1,12 @@
-import { querySelectorMemoized } from "../utils";
-
 /*
   dont use direct document.title = 'new title' assign
-  when there's a notification, twitter adds a (#) at the start to indicate the number
+  when there's a notification, twitter adds a (<number of noto's>) at the start to indicate the number
   of notifications. so directly assigning a new value might cause a crash because
   react on twitter will continuously try to add that pre-text and the extension will also react to that
   and replace it again causing an infinite loop. aka always use document.title = document.title.replace(...)
 */
 export default function head() {
-  const observer = new MutationObserver(head);
-  const titleElement = querySelectorMemoized("title");
-
   if (!document.title.endsWith("X")) return;
-
-  observer.disconnect();
 
   const faviconElement =
     document.querySelector<HTMLLinkElement>("link[rel~=icon]");
@@ -69,7 +62,4 @@ export default function head() {
 
   const tweetTitleRegex = /(^| )on [^\s:]+(?=[: ]|$)/g;
   document.title = document.title.replace(tweetTitleRegex, " on Twitter");
-
-  const config = { childList: true };
-  observer.observe(titleElement!, config);
 }

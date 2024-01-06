@@ -7,6 +7,7 @@ import head from "./head/title.js";
 import home, { license, moreTweetsLoaded } from "./home.js";
 import jobs from "./jobs.js";
 import logout from "./logout.js";
+import messages from "./messages.js";
 import allProfiles from "./profiles/all.js";
 import xProfile from "./profiles/x.js";
 import changeSearchBar from "./search-bar.js";
@@ -24,14 +25,15 @@ import { listener } from "./utils.js";
 // stuff normally called like `home()` and `auth()` only run once.
 // the other ones wrapped in `listener()` run on every page update.
 function main() {
-  head();
   home();
   auth();
   logout();
   tweetPage();
   jobs();
   grok();
+  listener(head);
   listener(twitterBlue);
+  listener(messages);
   listener(bookmarks);
   listener(changeSearchBar);
   listener(license);
