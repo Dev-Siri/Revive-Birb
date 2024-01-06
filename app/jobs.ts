@@ -1,4 +1,4 @@
-import { styled } from "./macros/styled" assert { type: "macro" };
+import { styled } from "./macros/styled" with { type: "macro" };
 
 import { TWITTER_LOGO_MARKUP_PATH } from "./constants/logo";
 import { querySelectorMemoized } from "./utils";

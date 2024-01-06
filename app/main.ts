@@ -2,6 +2,7 @@ import analyticsModal from "./analytics-modal.js";
 import auth from "./auth.js";
 import bookmarks from "./bookmarks.js";
 import dropDown from "./drop-down.js";
+import grok from "./grok.js";
 import head from "./head/title.js";
 import home, { license, moreTweetsLoaded } from "./home.js";
 import jobs from "./jobs.js";
@@ -29,6 +30,7 @@ function main() {
   logout();
   tweetPage();
   jobs();
+  grok();
   listener(twitterBlue);
   listener(bookmarks);
   listener(changeSearchBar);

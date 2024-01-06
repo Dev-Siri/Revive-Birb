@@ -1,6 +1,6 @@
 import { TWITTER_LOGO_MARKUP_PATH } from "./constants/logo.js";
 
-import { minifySVG } from "./macros/minify-svg.js" assert { type: "macro" };
+import { minifySVG } from "./macros/minify-svg.js" with { type: "macro" };
 import { isDarkMode, querySelectorMemoized } from "./utils.js";
 
 // still a part of /home so placed it here
