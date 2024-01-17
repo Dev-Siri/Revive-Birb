@@ -7,7 +7,7 @@ export default function tweet() {
   );
 
   if (tweetEngagementText)
-    tweetEngagementText.textContent = "View tweet engagements";
+    tweetEngagementText.textContent = "View Tweet engagements";
   if (tweetAnalyticsText)
-    tweetAnalyticsText.textContent = "View tweet analytics";
+    tweetAnalyticsText.textContent = "View Tweet analytics";
 }

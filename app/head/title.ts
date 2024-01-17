@@ -45,19 +45,19 @@ export default function head() {
   if (document.title.includes("Users who liked this post"))
     document.title = document.title.replace(
       "Users who liked this post",
-      "Users who liked this tweet"
+      "Users who liked this Tweet"
     );
 
   if (document.title.includes("Quotes of this post"))
     document.title = document.title.replace(
       "Quotes of this post",
-      "Quotes of this tweet"
+      "Quotes of this Tweet"
     );
 
   if (document.title.includes("Users who reposted this post"))
     document.title = document.title.replace(
       "Users who reposted this post",
-      "Users who retweeted this tweet"
+      "Users who Retweeted this Tweet"
     );
 
   const tweetTitleRegex = /(^| )on [^\s:]+(?=[: ]|$)/g;

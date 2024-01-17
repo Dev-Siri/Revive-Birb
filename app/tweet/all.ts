@@ -2,18 +2,18 @@ function getEngagementEmptyText(): [string, string] {
   if (location.pathname.endsWith("/quotes"))
     return [
       "No Quote Tweets yet",
-      "You will find a list of everyone who quoted this tweet here.",
+      "You will find a list of everyone who quoted this Tweet here.",
     ];
 
   if (location.pathname.endsWith("/retweets"))
     return [
       "No Retweets yet",
-      "Share someone else’s tweet on your timeline by retweeting it. When you do, it’ll show up here.",
+      "Share someone else’s Tweet on your timeline by Retweeting it. When you do, it’ll show up here.",
     ];
 
   return [
     "No likes yet",
-    "When someone taps the heart to Like this tweet, it’ll show up here.",
+    "When someone taps the heart to Like this Tweet, it’ll show up here.",
   ];
 }
 
@@ -60,5 +60,5 @@ export default function tweetPage() {
     tweetPlaceholder.textContent = "Tweet your reply";
   if (headerText) headerText.textContent = "Tweet";
   if (tweetEngagementText)
-    tweetEngagementText.textContent = "View tweet engagements";
+    tweetEngagementText.textContent = "View Tweet engagements";
 }

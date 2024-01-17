@@ -16,10 +16,10 @@ export default function analyticsModal() {
       "Tweet"
     );
   if (promotionInfoHeading)
-    promotionInfoHeading.textContent = "Promote your tweet";
+    promotionInfoHeading.textContent = "Promote your Tweet";
   if (promotionInfoButtonText)
-    promotionInfoButtonText.textContent = "Promote this tweet";
+    promotionInfoButtonText.textContent = "Promote this Tweet";
   if (promotionInfoParagraph)
     promotionInfoParagraph.textContent =
-      "Get more impressions and grow your brand. Promote this tweet and broaden your reach.";
+      "Get more impressions and grow your brand. Promote this Tweet and broaden your reach.";
 }

@@ -24,7 +24,7 @@ export default function allProfiles() {
     if (retweetedText && retweetedText.textContent)
       retweetedText.textContent = retweetedText.textContent.replace(
         "reposted",
-        "retweeted"
+        "Retweeted"
       );
 
     index++;
