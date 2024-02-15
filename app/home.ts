@@ -33,7 +33,7 @@ export function license() {
 }
 
 export default function home() {
-  const verified = querySelectorMemoized("a[aria-label=Premium] > div > div");
+  const verified = querySelectorMemoized("a[aria-label=Premium] > div > div") ?? querySelectorMemoized("a[aria-label='Premium+'] > div > div");
   const logo = querySelectorMemoized("a[aria-label=X]>div");
 
   if (logo) {

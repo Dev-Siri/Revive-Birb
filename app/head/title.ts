@@ -10,11 +10,16 @@ export default function head() {
 
   const faviconElement =
     document.querySelector<HTMLLinkElement>("link[rel~=icon]");
-  const faviconUrl = document.getElementById("favicon-url");
 
-  if (faviconElement && faviconUrl) {
-    faviconElement.href = faviconUrl.innerHTML;
-    document.documentElement.removeChild(faviconUrl);
+  const notificationsUnreadBadge = document.querySelector(
+    "a[href='/notifications'] > div > div > div[aria-live=polite] > span"
+  );
+  if (faviconElement) {
+    const iconHref = !!notificationsUnreadBadge
+      ? chrome.runtime.getURL("images/favicon-noto.ico")
+      : chrome.runtime.getURL("images/favicon.ico");
+
+    faviconElement.href = iconHref;
   }
 
   if (document.title === "X") {

@@ -5,16 +5,16 @@ export default function tweetButton() {
   const tweetBtnText = document.querySelector(
     "a[data-testid=SideNav_NewTweet_Button] > div > span > div > div > span > span"
   );
-  const tweetOnHome = document.querySelector(
+  const tweetOnHomeAndReply = document.querySelector(
     "div[data-testid=tweetButtonInline] > div > span > span"
   );
 
   if (tweetComposeText?.textContent) {
-    if (tweetComposeText.textContent === "Post all")
-      tweetComposeText.textContent = "Tweet all";
-    else tweetComposeText.textContent = "Tweet";
+    if (tweetComposeText.textContent === "Post")
+      tweetComposeText.textContent = "Tweet";
   }
 
   if (tweetBtnText) tweetBtnText.textContent = "Tweet";
-  if (tweetOnHome) tweetOnHome.textContent = "Tweet";
+  if (tweetOnHomeAndReply?.textContent === "Post")
+    tweetOnHomeAndReply.textContent = "Tweet";
 }

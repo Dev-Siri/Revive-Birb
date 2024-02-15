@@ -1,4 +1,9 @@
 export default function maskUrls() {
-  if (location.pathname.toLowerCase() === "/x")
+  const pathname = location.pathname.toLowerCase();
+
+  if (pathname === "/x")
     history.pushState({}, "", "https://twitter.com/twitter");
+
+  if (pathname === "/compose/post")
+    history.pushState({}, "", "https://twitter.com/compose/tweet");
 }
