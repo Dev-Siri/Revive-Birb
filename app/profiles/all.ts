@@ -8,6 +8,9 @@ export default function allProfiles() {
   const retweetedTexts = document.querySelectorAll(
     "span[data-testid=socialContext]"
   );
+  const showMoreTweetsText = document.querySelector(
+    "a[data-testid=show-similar-posts-pivot] > div > div > span"
+  );
 
   if (tweetsTabText) tweetsTabText.textContent = "Tweets";
   if (tweetCountText?.textContent)
@@ -15,6 +18,8 @@ export default function allProfiles() {
       "post",
       "Tweet"
     );
+  if (showMoreTweetsText)
+    showMoreTweetsText.textContent = "Show similar Tweets";
 
   let index = 0;
 
