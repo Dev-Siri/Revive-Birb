@@ -1,5 +1,5 @@
 export function listener(fn: () => void, element?: HTMLElement) {
-  const observer = new MutationObserver(() => requestAnimationFrame(fn));
+  const observer = new MutationObserver(() => setTimeout(fn, 0));
   const watchElement = element ?? document.documentElement;
 
   observer.disconnect();

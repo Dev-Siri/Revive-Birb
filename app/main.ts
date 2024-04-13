@@ -5,6 +5,7 @@ import dropDown from "./drop-down.js";
 import grok from "./grok.js";
 import head from "./head/title.js";
 import home, { license, moreTweetsLoaded } from "./home.js";
+import links from "./links.js";
 import logout from "./logout.js";
 import messages from "./messages.js";
 import allProfiles from "./profiles/all.js";
@@ -29,6 +30,7 @@ function main() {
   logout();
   tweetPage();
   grok();
+  listener(links);
   listener(head);
   listener(twitterBlue);
   listener(messages);
