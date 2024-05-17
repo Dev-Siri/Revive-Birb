@@ -6,7 +6,7 @@ export default function tweetButton() {
     "a[data-testid=SideNav_NewTweet_Button] > div > span > div > div > span > span"
   );
   const tweetOnHomeAndReply = document.querySelector(
-    "div[data-testid=tweetButtonInline] > div > span > span"
+    "button[data-testid=tweetButtonInline] > div > span > span"
   );
 
   if (tweetComposeText?.textContent) {
