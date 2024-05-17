@@ -4,7 +4,7 @@
   "version": "1.0",
   "description": "Bring back the old twitter logo and also replace many 𝕏 references with good ol birb.",
   "permissions": ["tabs", "activeTab", "scripting"],
-  "host_permissions": ["https://twitter.com/*", "<all_urls>"],
+  "host_permissions": ["https://twitter.com/*", "https://x.com/*", "<all_urls>"],
   "action": {
     "default_icon": "icons/32.png",
     "default_title": "Revive Birb"
@@ -25,13 +25,13 @@
   "content_scripts": [
     {
       "js": ["main.js"],
-      "matches": ["https://twitter.com/*"]
+      "matches": ["https://twitter.com/*", "https://x.com/*"]
     },
     {
       "js": ["injects/loading.js"],
       "css": ["styles/loading.css"],
       "run_at": "document_start",
-      "matches": ["https://twitter.com/*"]
+      "matches": ["https://twitter.com/*", "https://x.com/*"]
     }
   ],
   "icons": {
