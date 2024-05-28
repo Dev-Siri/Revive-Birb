@@ -30,7 +30,7 @@ export default function tweetPage() {
     "a[data-testid=analyticsButton] > div > span"
   );
   const engagementEmptyText = document.querySelector(
-    "#react-root > div > div > div.css-175oi2r.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div > div > div.css-175oi2r.r-1kihuf0.r-1jgb5lz.r-764hgp.r-jzhu7e.r-1dye5f7.r-13qz1uu > div > div.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-fdjqy7.r-1yjpyg1.r-ueyrd6.r-1vr29t4.r-5oul0u > span"
+    "#react-root > div > div > div.css-175oi2r.r-1f2l425.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div > div > div.css-175oi2r.r-1kihuf0.r-1xk7izq.r-f8sm7e.r-jzhu7e.r-1fkl15p.r-13qz1uu > div > div.css-146c3p1.r-bcqeeo.r-qvutc0.r-37j5jr.r-fdjqy7.r-1yjpyg1.r-ueyrd6.r-1vr29t4.r-5oul0u > span"
   );
   const quoteTab = document.querySelector(
     "#react-root > div > div > div.css-175oi2r.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div > div > div.css-175oi2r.r-aqfbo4.r-gtdqiz.r-1gn8etr.r-1g40b8q > div.css-175oi2r.r-1e5uvyk.r-5zmot > div:nth-child(2) > nav > div > div.css-175oi2r.r-1adg3ll.r-16y2uox.r-1wbh5a2.r-1pi2tsx > div > div:nth-child(1) > a > div > div > span"
@@ -39,7 +39,7 @@ export default function tweetPage() {
     "#react-root > div > div > div.css-175oi2r.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div > div > div.css-175oi2r.r-aqfbo4.r-gtdqiz.r-1gn8etr.r-1g40b8q > div.css-175oi2r.r-1e5uvyk.r-5zmot > div:nth-child(2) > nav > div > div.css-175oi2r.r-1adg3ll.r-16y2uox.r-1wbh5a2.r-1pi2tsx > div > div:nth-child(2) > a > div > div > span"
   );
   const engagementEmptySubText = document.querySelector(
-    "#react-root > div > div > div.css-175oi2r.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div > div > div.css-175oi2r.r-1kihuf0.r-1jgb5lz.r-764hgp.r-jzhu7e.r-1dye5f7.r-13qz1uu > div > div.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-fdjqy7.r-a023e6.r-rjixqe.r-16dba41.r-1nxhmzv > span"
+    "#react-root > div > div > div.css-175oi2r.r-1f2l425.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div > div > div.css-175oi2r.r-1kihuf0.r-1xk7izq.r-f8sm7e.r-jzhu7e.r-1fkl15p.r-13qz1uu > div > div.css-146c3p1.r-bcqeeo.r-qvutc0.r-37j5jr.r-fdjqy7.r-a023e6.r-rjixqe.r-16dba41.r-1nxhmzv > span"
   );
 
   if (engagementEmptyText && engagementEmptySubText) {

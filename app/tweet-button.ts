@@ -1,6 +1,6 @@
 export default function tweetButton() {
   const tweetComposeText = document.querySelector(
-    "div[data-testid=tweetButton] > div > span > span"
+    "button[data-testid=tweetButton] > div > span > span"
   );
   const tweetBtnText = document.querySelector(
     "a[data-testid=SideNav_NewTweet_Button] > div > span > div > div > span > span"
