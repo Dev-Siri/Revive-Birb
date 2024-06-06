@@ -34,7 +34,7 @@ There are still way more X replacements with this extension, you can see for you
 
 ### When was this last updated meaningfully?
 
-#### 31st December, 2023
+#### May 29th, 2024
 
 ## How to use this?
 
