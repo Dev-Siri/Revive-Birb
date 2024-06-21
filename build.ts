@@ -9,6 +9,7 @@ import { mkdir, readdir, rm } from "fs/promises";
 const outDir = "dist";
 const injectors = ["loading.ts"];
 const injectScripts = ["loading.ts"];
+const serviceWorker = "service-worker.ts";
 const entryPoint = "main.ts";
 
 /**************************************/
@@ -36,12 +37,17 @@ const builds: Promise<BuildOutput>[] = [];
 
 const mainBuild = Bun.build({
   ...buildConfig,
-  target: "browser",
   entrypoints: [`./app/${entryPoint}`],
   outdir: `./${outDir}`,
 });
 
-builds.push(mainBuild);
+const swBuild = Bun.build({
+  ...buildConfig,
+  entrypoints: [`./app/background/${serviceWorker}`],
+  outdir: `./${outDir}`,
+});
+
+builds.push(mainBuild, swBuild);
 
 const injectBuild = Bun.build({
   ...buildConfig,

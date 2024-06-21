@@ -19,7 +19,7 @@ import tweetModal from "./tweet-modal.js";
 import tweet from "./tweet.js";
 import tweetPage from "./tweet/all.js";
 import twitterBlue from "./twitter-blue.js";
-import maskUrls, { replaceXwithTwitterDotCom } from "./url-masking.js";
+import maskUrls from "./url-masking.js";
 import { listener } from "./utils.js";
 
 // stuff normally called like `home()` and `auth()` only run once.
@@ -50,7 +50,6 @@ function main() {
   listener(theme);
   listener(tweetModal);
   listener(moreTweetsLoaded);
-  listener(replaceXwithTwitterDotCom);
 }
 
 // HACK: Runs when the page loads enough (SPA workaround)

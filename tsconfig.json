@@ -12,6 +12,6 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["build.ts", "dom.d.ts", "./app/**/*.ts"],
+  "include": ["build.ts", "dom.d.ts", "./app/**/*.ts", "@types/chrome"],
   "exclude": ["node_modules"]
 }

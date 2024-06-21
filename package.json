@@ -2,7 +2,7 @@
   "name": "revive-birb",
   "type": "module",
   "devDependencies": {
-    "@types/chrome": "^0.0.246",
+    "@types/chrome": "^0.0.268",
     "bun-types": "latest",
     "svgo": "^3.0.2"
   },
