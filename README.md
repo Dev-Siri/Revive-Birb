@@ -44,6 +44,14 @@ There are still way more X replacements with this extension, you can see for you
 $ git clone https://github.com/Dev-Siri/Blue-Bird.git
 ```
 
+- Now, this extension also uses the Twitter API for source labels. Because this requires the Twitter auth key, I can't share it, so if you don't have an api key, go into the [main.ts](app/main.ts) file and do a bit of editing yourself to remove the imports and code for the source label part of this extension. But if you do have a Twitter API key, then create a `env.ts` file in the app directory. (You can even see [tweet-source.ts](app/api/tweet-source.ts) trying to import from `../env`), then add this:
+
+```ts
+export const TWITTER_API_AUTH_TOKEN = "your-auth-token";
+```
+
+Why didn't I just use dot env files? Well the build system is shit because I tried to keep it way too simple in the start, so a ts file just felt easier than now figuring out how to make Bun build work with .envs.
+
 - For this step, you need to make sure you have [buntime](https://bun.sh) installed. Then run the build script:
 
 ```
