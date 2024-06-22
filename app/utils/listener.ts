@@ -9,11 +9,3 @@ export function listener(fn: () => void, element?: HTMLElement) {
   const config = { childList: true, subtree: true };
   if (watchElement) observer.observe(watchElement, config);
 }
-
-export function isDarkMode() {
-  const htmlTagHasDarkScheme = document.documentElement
-    .getAttribute("style")
-    ?.includes("color-scheme: dark");
-
-  return htmlTagHasDarkScheme;
-}

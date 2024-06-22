@@ -18,13 +18,17 @@ import tweetButton from "./tweet-button.js";
 import tweetModal from "./tweet-modal.js";
 import tweet from "./tweet.js";
 import tweetPage from "./tweet/all.js";
+import sourceLabel from "./tweet/source-label.js";
 import twitterBlue from "./twitter-blue.js";
 import maskUrls from "./url-masking.js";
-import { listener } from "./utils.js";
+import { listener } from "./utils/listener.js";
 
 // stuff normally called like `home()` and `auth()` only run once.
 // the other ones wrapped in `listener()` run on every page update.
 function main() {
+  // Remove this if you don't have an api key
+  let sourceLabelRanOnce = false;
+
   home();
   auth();
   logout();
@@ -50,6 +54,17 @@ function main() {
   listener(theme);
   listener(tweetModal);
   listener(moreTweetsLoaded);
+  // remove all of this if you don't have an api key
+  listener(() => {
+    if (!location.pathname.includes("/status")) sourceLabelRanOnce = false;
+  });
+  listener(async () => {
+    if (sourceLabelRanOnce) return;
+
+    await sourceLabel();
+
+    sourceLabelRanOnce = true;
+  }, document.getElementsByTagName("title")[0]);
 }
 
 // HACK: Runs when the page loads enough (SPA workaround)
