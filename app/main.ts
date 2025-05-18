@@ -2,7 +2,6 @@ import analyticsModal from "./analytics-modal.js";
 import auth from "./auth.js";
 import bookmarks from "./bookmarks.js";
 import dropDown from "./drop-down.js";
-import grok from "./grok.js";
 import head from "./head/title.js";
 import home, { license, moreTweetsLoaded } from "./home.js";
 import links from "./links.js";
@@ -33,7 +32,6 @@ function main() {
   auth();
   logout();
   tweetPage();
-  grok();
   listener(links);
   listener(head);
   listener(twitterBlue);

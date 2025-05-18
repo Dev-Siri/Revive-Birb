@@ -6,6 +6,10 @@ export function listener(fn: () => void, element?: HTMLElement) {
 
   fn();
 
-  const config = { childList: true, subtree: true };
-  if (watchElement) observer.observe(watchElement, config);
+  if (watchElement) observer.observe(watchElement, {
+    childList: true,
+    subtree: true,
+    attributes: false,
+    characterData: false,
+  });
 }
